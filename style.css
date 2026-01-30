@@ -1,3 +1,4 @@
+/* CSS Variables */
 :root {
     --bg-dark: #FFF0F5;
     /* Lavender Blush - Light Pink Background */
@@ -177,27 +178,20 @@ h3 {
     color: #333;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
     /* White halo for readability */
-}
-
-.hero-content p {
-    color: #555;
-    font-weight: 500;
-}
-
-.hero-content {
-    max-width: 600px;
-}
-
-.hero-content h1 {
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .hero-content p {
+    color: #555;
+    font-weight: 500;
     font-size: 1.2rem;
-    color: var(--text-muted);
     margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 600px;
 }
 
 /* Sections */
@@ -323,13 +317,10 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 15px;
-<<<<<<< HEAD
-=======
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     min-height: 200px;
     /* Prevent layout collapse */
->>>>>>> 1506449 ( reserve modal)
 }
 
 .class-item {
@@ -382,6 +373,15 @@ h3 {
 .status-open {
     background: rgba(168, 188, 161, 0.2);
     color: #A8BCA1;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-open:hover {
+    transform: scale(1.05);
+    background: #A8BCA1;
+    /* Slightly darker green */
+    color: white;
 }
 
 .status-full {
@@ -433,11 +433,6 @@ h3 {
     box-shadow: 0 0 0 3px rgba(255, 158, 170, 0.2);
 }
 
-.contact-form input:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
 .full-width {
     width: 100%;
 }
@@ -451,28 +446,10 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
-    .contact-box {
-        grid-template-columns: 1fr;
-        padding: 40px;
-    }
-
-    .nav-links {
-        display: none;
-        /* Mobile menu to be implemented if needed */
-    }
-<<<<<<< HEAD
-}
-=======
-}
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -480,7 +457,8 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
@@ -488,8 +466,13 @@ footer {
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
@@ -501,7 +484,7 @@ footer {
     max-width: 500px;
     border-radius: 20px;
     position: relative;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -534,15 +517,19 @@ footer {
     cursor: pointer;
 }
 
-/* Make status-open clickable */
-.status-open {
-    cursor: pointer;
-    transition: all 0.2s;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 
-.status-open:hover {
-    transform: scale(1.05);
-    background: #A8BCA1; /* Slightly darker green */
-    color: white;
+    .contact-box {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Mobile menu to be implemented if needed */
+    }
 }
->>>>>>> 1506449 ( reserve modal)

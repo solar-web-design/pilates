@@ -11,13 +11,8 @@ const scheduleData = {
         { time: "19:30", name: "Men's Pilates", instructor: "Bella", status: "open" }
     ],
     "Wed": [
-<<<<<<< HEAD
-         { time: "07:00", name: "Early Bird Flow", instructor: "Bella", status: "open" },
-         { time: "18:30", name: "Post-Work Relax", instructor: "Zoey", status: "full" }
-=======
         { time: "07:00", name: "Early Bird Flow", instructor: "Bella", status: "open" },
         { time: "18:30", name: "Post-Work Relax", instructor: "Zoey", status: "full" }
->>>>>>> 1506449 ( reserve modal)
     ],
     "Thu": [
         { time: "09:00", name: "Barre Pilates", instructor: "Lily", status: "open" },
@@ -39,17 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const scheduleDisplay = document.getElementById('schedule-display');
 
     function renderSchedule(day) {
-<<<<<<< HEAD
-        // Clear current content
-        scheduleDisplay.innerHTML = '';
-        
-        // Add animation class trigger logic (optional)
-        scheduleDisplay.style.opacity = '0';
-        
-        setTimeout(() => {
-            const classes = scheduleData[day] || [];
-            
-=======
         // 1. Fade out
         scheduleDisplay.style.opacity = '0';
 
@@ -59,18 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
             scheduleDisplay.innerHTML = '';
             const classes = scheduleData[day] || [];
 
->>>>>>> 1506449 ( reserve modal)
             if (classes.length === 0) {
                 scheduleDisplay.innerHTML = '<div class="class-item" style="justify-content:center; color:#888;">휴관일입니다.</div>';
             } else {
                 classes.forEach(cls => {
                     const statusClass = cls.status === 'full' ? 'status-full' : 'status-open';
                     const statusText = cls.status === 'full' ? '마감' : '예약가능';
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 1506449 ( reserve modal)
                     const html = `
                         <div class="class-item">
                             <div class="class-time">${cls.time}</div>
@@ -84,16 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     scheduleDisplay.insertAdjacentHTML('beforeend', html);
                 });
             }
-<<<<<<< HEAD
-            
-            scheduleDisplay.style.opacity = '1';
-        }, 200);
-=======
 
             // 4. Fade in
             scheduleDisplay.style.opacity = '1';
         }, 300);
->>>>>>> 1506449 ( reserve modal)
     }
 
     dayBtns.forEach(btn => {
@@ -102,11 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dayBtns.forEach(b => b.classList.remove('active'));
             // Add active to clicked
             btn.classList.add('active');
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 1506449 ( reserve modal)
             // Render
             renderSchedule(btn.dataset.day);
         });
@@ -124,8 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
     });
-<<<<<<< HEAD
-=======
 
     // --- Modal Logic ---
     const modal = document.getElementById('reservation-modal');
@@ -188,5 +155,4 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
         modalForm.reset();
     });
->>>>>>> 1506449 ( reserve modal)
 });

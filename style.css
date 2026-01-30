@@ -1,14 +1,18 @@
-/* CSS Variables */
 :root {
-    --bg-dark: #121212;
-    --bg-card: #1E1E1E;
-    --primary: #C5D8C3; /* Sage Green */
-    --secondary: #D8C3C5; /* Dusty Rose */
-    --accent: #E8F1F2;
-    --text-main: #FFFFFF;
-    --text-muted: #B0B0B0;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: #FFF0F5;
+    /* Lavender Blush - Light Pink Background */
+    --bg-card: #FFFFFF;
+    --primary: #FF9EAA;
+    /* Soft Pink */
+    --secondary: #E6E6FA;
+    /* Lavender */
+    --accent: #FFFACD;
+    /* Lemon Chiffon */
+    --text-main: #333333;
+    /* Darker Grey for better contrast */
+    --text-muted: #666666;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 192, 203, 0.5);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Noto Sans KR', sans-serif;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -40,7 +44,9 @@ ul {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-heading);
     font-weight: 600;
 }
@@ -58,16 +64,20 @@ h1, h2, h3 {
 
 .btn-primary {
     background-color: var(--primary);
-    color: var(--bg-dark);
+    color: #4A4A4A;
+    /* Dark Grey text on Pink button */
     padding: 12px 30px;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #b0c4ae;
+    background-color: #FFB6C1;
+    /* Lighter Pink hover */
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 158, 170, 0.4);
 }
 
 .btn-outline {
@@ -92,10 +102,17 @@ h1, h2, h3 {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.95);
+    /* Solid white/pink for high contrast */
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
 .nav-container {
@@ -121,7 +138,8 @@ h1, h2, h3 {
     color: var(--text-muted);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary);
 }
 
@@ -150,8 +168,20 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(18,18,18,0.9), rgba(18,18,18,0.4));
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.7), rgba(255, 240, 245, 0.4));
     z-index: -1;
+}
+
+/* Ensure Hero Text is Legible */
+.hero-content h1 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    /* White halo for readability */
+}
+
+.hero-content p {
+    color: #555;
+    font-weight: 500;
 }
 
 .hero-content {
@@ -207,7 +237,7 @@ h1, h2, h3 {
 
 .instructor-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border-color: var(--primary);
 }
 
@@ -252,7 +282,8 @@ h1, h2, h3 {
 
 /* Timetable */
 .dark-section {
-    background-color: #0A0A0A;
+    background-color: #F8E4E9;
+    /* Soft Pinkish dark section */
 }
 
 .timetable-wrapper {
@@ -281,7 +312,8 @@ h1, h2, h3 {
     font-family: var(--font-heading);
 }
 
-.day-btn.active, .day-btn:hover {
+.day-btn.active,
+.day-btn:hover {
     background: var(--primary);
     color: var(--bg-dark);
     border-color: var(--primary);
@@ -291,6 +323,13 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+<<<<<<< HEAD
+=======
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    min-height: 200px;
+    /* Prevent layout collapse */
+>>>>>>> 1506449 ( reserve modal)
 }
 
 .class-item {
@@ -298,22 +337,29 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
+    background: #FFFFFF;
+    border-radius: 15px;
     transition: var(--transition);
-    border-left: 3px solid transparent;
+    border: 1px solid #FFD1DC;
+    /* Distinct Pink Border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    /* Subtle Shadow */
+    margin-bottom: 10px;
 }
 
 .class-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-left-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255, 158, 170, 0.15);
+    border-color: var(--primary);
+    background: #FFFBFD;
 }
 
 .class-time {
     font-weight: 700;
     font-size: 1.2rem;
     width: 100px;
-    color: var(--primary);
+    color: #FF8BA0;
+    /* Deep Pink for time */
 }
 
 .class-info h4 {
@@ -355,19 +401,36 @@ h1, h2, h3 {
 }
 
 .glass-panel {
-    background: rgba(30, 30, 30, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid #FFD1DC;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
 }
 
 .contact-form input {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
     border-radius: 10px;
-    color: white;
+    color: #333333;
+    /* Dark text */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder {
+    color: #999999;
+    /* Clearly visible grey placeholder */
+}
+
+.contact-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #FFF0F5;
+    /* Slight pink tint on focus */
+    box-shadow: 0 0 0 3px rgba(255, 158, 170, 0.2);
 }
 
 .contact-form input:focus {
@@ -393,13 +456,93 @@ footer {
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .contact-box {
         grid-template-columns: 1fr;
         padding: 40px;
     }
-    
+
     .nav-links {
-        display: none; /* Mobile menu to be implemented if needed */
+        display: none;
+        /* Mobile menu to be implemented if needed */
     }
+<<<<<<< HEAD
 }
+=======
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #FFD1DC;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Make status-open clickable */
+.status-open {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-open:hover {
+    transform: scale(1.05);
+    background: #A8BCA1; /* Slightly darker green */
+    color: white;
+}
+>>>>>>> 1506449 ( reserve modal)
